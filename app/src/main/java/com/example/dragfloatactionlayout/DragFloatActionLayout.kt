@@ -51,7 +51,7 @@ class DragFloatActionLayout : LinearLayout {
             iconBar.alpha = if (field) 0.6f else 1f
         }
 
-    private val MAX_CLICK_DISTANCE = 8f
+    private var MAX_CLICK_DISTANCE = 8f
 
     private var isMove = false
     private var pressedX = 0
@@ -75,6 +75,7 @@ class DragFloatActionLayout : LinearLayout {
         padding = dip2px(20f).toFloat()
         orientation = HORIZONTAL
         gravity = Gravity.END
+        MAX_CLICK_DISTANCE=ViewConfiguration.get(context).scaledTouchSlop.toFloat
         initView()
         initAnim()
 
